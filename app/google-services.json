@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "628747637502",
+    "project_id": "housesearch-3c92f",
+    "storage_bucket": "housesearch-3c92f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:628747637502:android:5c2c5a22c7f6e1175b8baf",
+        "android_client_info": {
+          "package_name": "com.example.housesearch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "628747637502-72s0n8tqibufdqaju83gpbd3v9lqq7qn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCakTdZa9kCWZhb3fTg7vTB0jKVpLgYHc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "628747637502-72s0n8tqibufdqaju83gpbd3v9lqq7qn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
