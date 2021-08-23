@@ -12,6 +12,9 @@ import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -19,6 +22,7 @@ import android.widget.Toast;
 
 import com.example.housesearch.databinding.ActivityHouseListBinding;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -235,6 +239,48 @@ public class HouseListActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                openSettings();
+                return true;
+            case R.id.action_logout:
+                logout();
+                return true;
+            case R.id.action_about:
+                aboutUs();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void aboutUs() {
+        /*startActivity(new Intent(getApplicationContext(), OnBoarding.class));*/
+        Toast.makeText(getApplicationContext(), "Implemented", Toast.LENGTH_SHORT).show();
+    }
+
+    private void logout() {
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(getApplicationContext(), OnBoarding.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
+    }
+
+    private void openSettings() {
+        Toast.makeText(getApplicationContext(), "Implemented soon", Toast.LENGTH_SHORT).show();
+        /*startActivity(new Intent(getApplicationContext(), HouseListActivity.class));*/
     }
 
 }

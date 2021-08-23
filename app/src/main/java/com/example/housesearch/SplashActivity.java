@@ -25,16 +25,11 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                if (user != null) {
-                    // User is signed in
-                    // Start home activity
-                    /* Create an Intent that will start the Menu-Activity. */
-                    Intent mainIntent = new Intent(getApplicationContext(),HouseListActivity.class);
-                    startActivity(mainIntent);
-                } else {
-                    // No user is signed in
-                    // start login activity
-                    startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                if(user != null){
+                    startActivity(new Intent(getApplicationContext(), HouseListActivity.class));
+                }
+                else {
+                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                 }
                 finish();
             }
